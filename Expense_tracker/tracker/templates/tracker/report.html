@@ -1,0 +1,21 @@
+<form>
+    <input name="report_type" type="hidden" value='all'>
+    <button type="submit">All </button>
+</form>
+
+<form>
+    <input name="report_type" type="hidden" value='current_month'>
+    <button type="submit">Current Month </button>
+</form>
+<form>
+    <input name="report_type" type="hidden" value='previous_month'>
+    <button type="submit">Previous Month </button>
+</form>
+<form>
+    <input name="report_type" type="hidden" value='current_year'>
+    <button type="submit">Current Year </button>
+</form>
+
+{% for expense in ExpenseData %}
+    {{ expense.category.name }}, {{ expense.amount }}, {{ expense.created_at }}
+{% endfor %}
